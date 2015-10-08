@@ -43,17 +43,36 @@ module.exports = {
             imagePath: '/assets/images' // Used by the image-url helper
         }
     },
+    // eslint
     lint: {
         src: [
             src + '/javascript/**/*.js',
             src + '/javascript/**/*.jsx'
         ],
         settings: {
-            linter: require('jshint-jsx').JSXHINT,
-            node: true,
-            browser: true
-        }
+            ignore: [
+                'node_modules'
+            ],
+            envs: [
+                'browser',
+                'node',
+                'es6'
+            ]
+        },
+        format: ''
     },
+    // jshint
+    /*lint: {*/
+        //src: [
+            //src + '/javascript/**/*.js',
+            //src + '/javascript/**/*.jsx'
+        //],
+        //settings: {
+            //linter: require('jshint-jsx').JSXHINT,
+            //node: true,
+            //browser: true
+        //}
+    /*},*/
     browserify: {
         src: src + '/javascript/app.js',
         dest: dest + '/js',

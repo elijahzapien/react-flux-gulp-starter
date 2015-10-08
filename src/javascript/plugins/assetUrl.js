@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var assetUrl = {
     name: 'assetUrl',
@@ -68,11 +68,11 @@ var assetUrl = {
                 };
 
                 componentContext.siteUrl = () => {
-                    return siteUrl
+                    return siteUrl;
                 };
 
                 return componentContext;
-            },
+            }
         };
     },
 
@@ -85,7 +85,7 @@ var assetUrl = {
             folder: this.folder,
             cloudfront: this.cloudfront,
             bypassCdn: this.bypassCdn,
-            urlHash: this.urlHash,
+            urlHash: this.urlHash
         };
     },
 

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Inspired by
@@ -26,7 +26,7 @@ var importMedia = {
                 string = string.replace(/[']/g, '"').replace(/\\|^[\s\S]{0,1}|[\s\S]$/g, '');
             }
             return string;
-        };
+        }
 
         function getBreakpoints() {
             if (
@@ -37,18 +37,20 @@ var importMedia = {
                 try {
                     breakpoints = JSON.parse(removeQuotes(data));
                     return breakpoints;
-                } catch (err) {}
+                } catch (err) {
+                    console.log(err);
+                }
             }
-        };
+        }
 
         function isBreakpointActive(breakpoint) {
             getBreakpoints();
             return breakpoints.hasOwnProperty(breakpoint) && breakpoints[breakpoint].active;
-        };
+        }
 
         function isBreakpointNotActive(breakpoint) {
             return !isBreakpointActive(breakpoint);
-        };
+        }
 
         function getActiveBreakpoint() {
             getBreakpoints();
@@ -67,7 +69,7 @@ var importMedia = {
 
             return largest.name;
 
-        };
+        }
 
         function getBreakpointValue(breakpoint, asNumber) {
 
@@ -79,7 +81,7 @@ var importMedia = {
 
             return asNumber ? parseFloat(breakpoints[breakpoint].value) : breakpoints[breakpoint].value;
 
-        };
+        }
 
         return {
 

@@ -63,7 +63,7 @@ class ApplicationStore extends BaseStore {
     getState() {
         return {
             route: this.currentRoute,
-            breakpoint: this.breakpoint,
+            breakpoint: this.breakpoint
         };
     }
 
@@ -88,7 +88,7 @@ ApplicationStore.handlers = {
     'LOAD_DATA_START': 'onLoadDataStart',
     'LOAD_DATA_END': 'onLoadDataEnd',
     'CHANGE_ROUTE': 'onChangeRoute',
-    'BREAKPOINT_UPDATE': 'onBreakpointUpdate',
+    'BREAKPOINT_UPDATE': 'onBreakpointUpdate'
 };
 
 export default ApplicationStore;

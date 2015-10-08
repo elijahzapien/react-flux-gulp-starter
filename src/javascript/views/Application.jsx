@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 import _ from 'lodash';
 
 import React, {PropTypes, Component} from 'react';
 
-import ApplicationStore from '../stores/ApplicationStore';
+//import ApplicationStore from '../stores/ApplicationStore';
 
-import breakpointUpdate from '../actions/breakpointUpdate';
+//import breakpointUpdate from '../actions/breakpointUpdate';
 
 import Navigation from './components/Navigation';
 import Timestamp from './components/Timestamp';
@@ -14,7 +14,7 @@ import Timestamp from './components/Timestamp';
 export default class Application extends Component {
 
     componentWillMount() {
-        this.onResize();
+        //this.onResize();
     }
 
     componentDidMount() {

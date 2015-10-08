@@ -1,15 +1,15 @@
 'use strict';
 
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import {Link} from 'react-router';
 
-export default class Navigation extends React.Component{
+export default class Navigation extends Component {
     render () {
         var isActive = this.context.history.isActive;
         var homeClass = isActive('/') ? 'selected' : '';
-        var aboutClass = isActive('/about') ? 'selected' : ''
-        var resourcesClass = isActive('/resources') ? 'selected' : ''
-        var deadClass = isActive('/sgfjhsdgfjhsdgfjsd') ? 'selected' : ''
+        var aboutClass = isActive('/about') ? 'selected' : '';
+        var resourcesClass = isActive('/resources') ? 'selected' : '';
+        var deadClass = isActive('/sgfjhsdgfjhsdgfjsd') ? 'selected' : '';
         return (
             <ul className="navigation">
                 <li className={homeClass}><Link to='/' activeClassName="selected">Home</Link></li>
@@ -21,6 +21,3 @@ export default class Navigation extends React.Component{
     }
 }
 
-Navigation.contextTypes = {
-    history: PropTypes.object.isRequired
-};
