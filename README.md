@@ -1,1 +1,48 @@
-# react-flux-gulp-starter
+# React-Flux-Gulp Boilerplate (WIP)
+
+Inspired by the [react-flux-gulp-starter](https://github.com/MadeInHaus/react-flux-gulp-starter) by [MadeInHaus](http://madeinhaus.com/)
+
+- [ECMAScript6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
+- [babel](https://babeljs.io/) 5.8.22
+- [react](https://facebook.github.io/react/) 0.13.3
+- [react-router](https://github.com/rackt/react-router) 1.0
+- [alt](http://alt.js.org/) 0.17.3
+- [lodash](https://lodash.com/) 3.10
+- [express](http://expressjs.com/) 4.13.1
+
+#### Build tools
+
+- [gulp](http://gulpjs.com/)
+- [sass](http://sass-lang.com/)
+- [browserify](http://browserify.org/)
+- [browser-sync](http://www.browsersync.io/)
+- etc, see [package.json](https://raw.githubusercontent.com/elijahzapien/react-flux-gulp-starter/master/package.json)
+
+## Getting Started
+
+#### 1. Install gulp globally:
+
+```
+$ npm install --global gulp
+```
+
+#### 2. Install project dependencies:
+
+```
+$ npm install
+```
+
+#### 3. Run gulp
+
+Start a local dev environment:
+
+```
+$ gulp
+```
+
+## Generate a production build
+
+```
+$ gulp production
+```
+

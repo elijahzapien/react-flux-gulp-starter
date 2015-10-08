@@ -1,0 +1,22 @@
+[
+    {
+        "id": "resource-one",
+        "title": "resource one",
+        "path": "http://www.google.com"
+    },
+    {
+        "id": "resource-two",
+        "title": "resource two",
+        "path": "http://www.yahoo.com"
+    },
+    {
+        "id": "resource-three",
+        "title": "resource three",
+        "path": "http://www.facebook.com"
+    },
+    {
+        "id": "resource-four",
+        "title": "resource four",
+        "path": "http://www.yelp.com"
+    }
+]

@@ -1,0 +1,54 @@
+
+#app {
+    > div {
+        overflow: hidden;
+
+        > nav {
+            position: fixed;
+            background-image: url('#{$baseUrl}/images/logo.png');
+            background-repeat: no-repeat;
+            @include rem(background-size, 10, 10);
+            @include rem(margin, 2.2);
+            @include rem(padding-top, 10);
+            @include rem(width, 10);
+            text-align: center;
+        }
+
+        > main {
+            @include rem(margin, 3, 2, 2, 17);
+        }
+
+        > footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #444;
+        }
+    }
+}
+
+// Media Queries
+// --------------
+@include media (">=small") {
+    body {
+        background-color: #0099FF;
+    }
+}
+
+@include media (">=medium") {
+    body {
+        background-color: #CC66FF;
+    }
+}
+
+@include media (">=large") {
+    body {
+        background-color: #FF5050;
+    }
+}
+
+@include media (">=xlarge") {
+    body {
+        background-color: #33CC33;
+    }
+}
