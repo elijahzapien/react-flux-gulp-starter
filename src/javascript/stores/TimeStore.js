@@ -1,39 +1,24 @@
 'use strict';
 
-import BaseStore from 'fluxible/addons/BaseStore';
+import alt from '../alt';
+import TimeActions from '../actions/TimeActions';
 
-class TimeStore extends BaseStore {
+class TimeStore {
 
-    constructor (dispatcher) {
-        super(dispatcher);
+    constructor() {
         this.time = new Date();
+
+        this.bindListeners({
+            onTimeUpdate: TimeActions.UPDATE_TIME
+        });
     }
 
-    handleTimeChange (payload) {
+    onTimeUpdate(payload) {
         this.time = new Date();
         this.emitChange();
     }
 
-    getState () {
-        return {
-            time: this.time.getTime()
-        };
-    }
-
-    dehydrate () {
-        return this.getState();
-    }
-
-    rehydrate (state) {
-        this.time = new Date(state.time);
-    }
-
 }
 
-TimeStore.storeName = 'TimeStore';
-TimeStore.handlers = {
-    'CHANGE_ROUTE': 'handleTimeChange',
-    'UPDATE_TIME': 'handleTimeChange'
-};
+export default alt.createStore(TimeStore, 'TimeStore');
 
-export default TimeStore;

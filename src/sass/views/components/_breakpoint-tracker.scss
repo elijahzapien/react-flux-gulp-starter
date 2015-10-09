@@ -1,6 +1,6 @@
 .breakpoint-tracker {
     display: block;
-    height: 30px;
+    min-height: 30px;
     margin: 0;
     @include rem(padding, 1);
     @include rem(font-size, 1.4);

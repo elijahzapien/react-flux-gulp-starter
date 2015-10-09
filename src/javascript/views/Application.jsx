@@ -47,8 +47,8 @@ export default class Application extends Component {
                     {this.props.children}
                 </main>
                 <footer>
-                    <BreakpointTracker />
                     <Timestamp />
+                    <BreakpointTracker />
                 </footer>
             </div>
         );
