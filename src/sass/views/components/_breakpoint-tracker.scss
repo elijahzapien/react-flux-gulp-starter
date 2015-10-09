@@ -1,0 +1,34 @@
+.breakpoint-tracker {
+    display: block;
+    height: 30px;
+    margin: 0;
+    @include rem(padding, 1);
+    @include rem(font-size, 1.4);
+}
+
+// Media Queries
+// --------------
+@include media (">=small") {
+    .breakpoint-tracker {
+        background-color: #0099FF;
+    }
+}
+
+@include media (">=medium") {
+    .breakpoint-tracker {
+        background-color: #CC66FF;
+    }
+}
+
+@include media (">=large") {
+    .breakpoint-tracker {
+        background-color: #FF5050;
+    }
+}
+
+@include media (">=xlarge") {
+    .breakpoint-tracker {
+        background-color: #33CC33;
+    }
+}
+

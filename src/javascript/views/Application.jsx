@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 
 import Navigation from './components/Navigation';
 import Timestamp from './components/Timestamp';
+import BreakpointTracker from './components/BreakpointTracker';
 
 export default class Application extends Component {
 
@@ -46,6 +47,7 @@ export default class Application extends Component {
                     {this.props.children}
                 </main>
                 <footer>
+                    <BreakpointTracker />
                     <Timestamp />
                 </footer>
             </div>

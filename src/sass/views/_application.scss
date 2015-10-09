@@ -1,4 +1,3 @@
-
 #app {
     > div {
         overflow: hidden;
@@ -29,26 +28,8 @@
 
 // Media Queries
 // --------------
-@include media (">=small") {
-    body {
-        background-color: #0099FF;
-    }
-}
+@include media (">=small") {}
+@include media (">=medium") {}
+@include media (">=large") {}
+@include media (">=xlarge") {}
 
-@include media (">=medium") {
-    body {
-        background-color: #CC66FF;
-    }
-}
-
-@include media (">=large") {
-    body {
-        background-color: #FF5050;
-    }
-}
-
-@include media (">=xlarge") {
-    body {
-        background-color: #33CC33;
-    }
-}
