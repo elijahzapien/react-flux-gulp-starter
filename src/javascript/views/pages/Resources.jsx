@@ -1,6 +1,6 @@
 'use strict';
 
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
 //import ResourcesStore from '../../stores/ResourcesStore';

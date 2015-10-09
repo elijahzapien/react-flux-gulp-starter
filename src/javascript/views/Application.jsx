@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 import _ from 'lodash';
 
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
 
 //import ApplicationStore from '../stores/ApplicationStore';
 

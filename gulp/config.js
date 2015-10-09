@@ -49,16 +49,7 @@ module.exports = {
             src + '/javascript/**/*.js',
             src + '/javascript/**/*.jsx'
         ],
-        settings: {
-            ignore: [
-                'node_modules'
-            ],
-            envs: [
-                'browser',
-                'node',
-                'es6'
-            ]
-        },
+        configFile: '.eslintrc',
         format: ''
     },
     // jshint

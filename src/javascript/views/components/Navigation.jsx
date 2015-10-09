@@ -1,10 +1,10 @@
 'use strict';
 
-import React, {PropTypes, Component} from 'react';
+import {Component} from 'react';
 import {Link} from 'react-router';
 
 export default class Navigation extends Component {
-    render () {
+    render() {
         var isActive = this.context.history.isActive;
         var homeClass = isActive('/') ? 'selected' : '';
         var aboutClass = isActive('/about') ? 'selected' : '';

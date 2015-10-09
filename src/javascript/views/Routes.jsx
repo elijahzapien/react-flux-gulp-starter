@@ -2,7 +2,7 @@
 
 import React from 'react';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { Router, Route, Link } from 'react-router';
+import { Router, Route} from 'react-router';
 
 import Application from './Application';
 
@@ -18,5 +18,5 @@ export default (
         <Route path="/resources" component={Resources} />
         <Route path="*" component={NotFound} />
     </Router>
-)
+);
 

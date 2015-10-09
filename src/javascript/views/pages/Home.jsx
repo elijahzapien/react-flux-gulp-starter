@@ -1,13 +1,13 @@
 'use strict';
 
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 
 export default class Home extends React.Component{
 
     render () {
 
-        let pageTitle = "Home - React, Flux, Gulp Started";
+        let pageTitle = 'Home - React, Flux, Gulp Started';
 
         return (
             <div>

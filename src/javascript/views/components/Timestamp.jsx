@@ -1,6 +1,6 @@
 'use strict';
 
-import React, {PropTypes, Component} from 'react';
+import {Component} from 'react';
 
 //import TimeStore from '../../stores/TimeStore';
 //import updateTime from '../../actions/updateTime';
