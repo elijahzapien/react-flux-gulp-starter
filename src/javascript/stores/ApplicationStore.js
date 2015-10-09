@@ -1,25 +1,29 @@
-
 'use strict';
 
-import BaseStore from 'fluxible/addons/BaseStore';
-import {PropTypes} from 'react';
+import alt from '../alt';
+import importMedia from '../utils/importMedia';
+import BreakpointActions from '../actions/BreakpointActions';
 
-class ApplicationStore extends BaseStore {
+class ApplicationStore {
 
-    constructor(dispatcher) {
-        super(dispatcher);
-        this.currentRoute = null;
+    constructor() {
+        let currentName = importMedia.getActive(),
+            currentValue = importMedia.getValue(currentName);
+
         this.breakpoint = {
-            currentName: null,
-            currentValue: null,
+            currentName: currentName,
+            currentValue: currentValue,
             previousName: null,
             previousValue: null
         };
+
+        this.bindListeners({
+            onBreakpointUpdate: BreakpointActions.UPDATE_BREAKPOINT
+        });
+
     }
 
     onBreakpointUpdate() {
-
-        let importMedia = this.getContext().importMedia;
 
         if (
             (this.breakpoint.currentName === null) ||
@@ -38,8 +42,10 @@ class ApplicationStore extends BaseStore {
                 previousValue: previousValue
             };
 
-            this.emitChange();
-
+        } else {
+            // needed or else component will rerender on every event dispatch (booty)
+            // hopefully will be fixed in next version
+            return false;
         }
 
     }
@@ -52,43 +58,7 @@ class ApplicationStore extends BaseStore {
         // do something on load data end
     }
 
-    onChangeRoute(route) {
-        if (this.currentRoute && route.pathname === this.currentRoute.pathname) {
-            return;
-        }
-        this.currentRoute = route;
-        this.emitChange();
-    }
-
-    getState() {
-        return {
-            route: this.currentRoute,
-            breakpoint: this.breakpoint
-        };
-    }
-
-    dehydrate() {
-        return this.getState();
-    }
-
-    rehydrate(state) {
-        this.currentRoute = state.route;
-        this.breakpoint = state.breakpoint;
-    }
-
 }
 
-ApplicationStore.storeName = 'ApplicationStore';
+export default alt.createStore(ApplicationStore, 'ApplicationStore');
 
-ApplicationStore.contextTypes = {
-    importMedia: PropTypes.object.isRequired
-};
-
-ApplicationStore.handlers = {
-    'LOAD_DATA_START': 'onLoadDataStart',
-    'LOAD_DATA_END': 'onLoadDataEnd',
-    'CHANGE_ROUTE': 'onChangeRoute',
-    'BREAKPOINT_UPDATE': 'onBreakpointUpdate'
-};
-
-export default ApplicationStore;

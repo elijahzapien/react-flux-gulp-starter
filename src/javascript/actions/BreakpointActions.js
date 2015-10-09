@@ -4,7 +4,7 @@ import alt from '../alt';
 
 class BreakpointActions {
     constructor() {
-        this.generateActions('breakpointUpdate');
+        this.generateActions('updateBreakpoint');
     }
 }
 

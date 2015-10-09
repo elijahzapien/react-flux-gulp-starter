@@ -2,40 +2,53 @@
 
 import _ from 'lodash';
 
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
+import connectToStores from 'alt/utils/connectToStores';
 
-//import ApplicationStore from '../stores/ApplicationStore';
-
-//import breakpointUpdate from '../actions/breakpointUpdate';
+import ApplicationStore from '../stores/ApplicationStore';
+import BreakpointActions from '../actions/BreakpointActions';
 
 import Navigation from './components/Navigation';
 import Timestamp from './components/Timestamp';
 import BreakpointTracker from './components/BreakpointTracker';
 
-export default class Application extends Component {
+class Application extends Component {
+
+    static getStores() {
+        return [ApplicationStore];
+    }
+
+    static getPropsFromStores() {
+        return ApplicationStore.getState();
+    }
 
     componentWillMount() {
-        //this.onResize();
+        this.onResize();
     }
 
     componentDidMount() {
-        //this.debouncedResize = _.debounce(this.onResize, 100);
-        //window.addEventListener('resize', this.debouncedResize.bind(this));
+        this.onResize();
+        this.debouncedResize = _.debounce(this.onResize, 100);
+        window.addEventListener('resize', this.debouncedResize.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener(this.debouncedResize);
     }
 
     onResize() {
-        //this.context.executeAction(breakpointUpdate);
+        BreakpointActions.updateBreakpoint();
     }
 
     render() {
 
-        /*let renderedChildren = React.Children.map(this.props.children, (child) => {*/
-            //return React.cloneElement(
-                //child, {
-                    //breakpoint: this.props.breakpoint
-                //}
-            //);
-        /*});*/
+        let renderedChildren = React.Children.map(this.props.children, (child) => {
+            return React.cloneElement(
+                child, {
+                    breakpoint: this.props.breakpoint
+                }
+            );
+        });
 
         return (
             <div>
@@ -43,12 +56,12 @@ export default class Application extends Component {
                     <Navigation />
                 </nav>
                 <main>
-                    {/*renderedChildren*/}
-                    {this.props.children}
+                    {renderedChildren}
+                    {/*this.props.children*/}
                 </main>
                 <footer>
                     <Timestamp />
-                    <BreakpointTracker />
+                    <BreakpointTracker breakpoint={this.props.breakpoint}/>
                 </footer>
             </div>
         );
@@ -56,3 +69,10 @@ export default class Application extends Component {
 
 }
 
+Application.propTypes = {
+    breakpoint: PropTypes.object.isRequired
+};
+
+Application = connectToStores(Application);
+
+export default Application;
