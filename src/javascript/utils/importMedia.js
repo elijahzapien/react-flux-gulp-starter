@@ -17,7 +17,7 @@ function removeQuotes(string) {
         string = string.replace(/[']/g, '"').replace(/\\|^[\s\S]{0,1}|[\s\S]$/g, '');
     }
     return string;
-};
+}
 
 function getBreakpoints() {
     if (
@@ -32,16 +32,16 @@ function getBreakpoints() {
             console.log(err);
         }
     }
-};
+}
 
 function isBreakpointActive(breakpoint) {
     getBreakpoints();
     return breakpoints.hasOwnProperty(breakpoint) && breakpoints[breakpoint].active;
-};
+}
 
 function isBreakpointNotActive(breakpoint) {
     return !isBreakpointActive(breakpoint);
-};
+}
 
 function getActiveBreakpoint() {
     getBreakpoints();
@@ -59,7 +59,7 @@ function getActiveBreakpoint() {
     }
 
     return largest.name;
-};
+}
 
 function getBreakpointValue(breakpoint, asNumber) {
     getBreakpoints();
@@ -67,7 +67,7 @@ function getBreakpointValue(breakpoint, asNumber) {
     if (!breakpoints || !breakpoints.hasOwnProperty(breakpoint)) return false;
 
     return asNumber ? parseFloat(breakpoints[breakpoint].value) : breakpoints[breakpoint].value;
-};
+}
 
 export default {
     getBreakpoints: getBreakpoints,
