@@ -52,18 +52,6 @@ module.exports = {
         configFile: '.eslintrc',
         format: ''
     },
-    // jshint
-    /*lint: {*/
-        //src: [
-            //src + '/javascript/**/*.js',
-            //src + '/javascript/**/*.jsx'
-        //],
-        //settings: {
-            //linter: require('jshint-jsx').JSXHINT,
-            //node: true,
-            //browser: true
-        //}
-    /*},*/
     browserify: {
         src: src + '/javascript/app.js',
         dest: dest + '/js',

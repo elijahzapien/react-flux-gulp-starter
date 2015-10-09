@@ -1,7 +1,5 @@
 # React-Flux-Gulp Boilerplate (WIP)
 
-Inspired by the [react-flux-gulp-starter](https://github.com/MadeInHaus/react-flux-gulp-starter) by [MadeInHaus](http://madeinhaus.com/)
-
 - [ECMAScript6](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla)
 - [babel](https://babeljs.io/) 5.8.22
 - [react](https://facebook.github.io/react/) 0.13.3
@@ -14,8 +12,8 @@ Inspired by the [react-flux-gulp-starter](https://github.com/MadeInHaus/react-fl
 
 - [gulp](http://gulpjs.com/)
 - [sass](http://sass-lang.com/)
+- [eslint](http://eslint.org/)
 - [browserify](http://browserify.org/)
-- [browser-sync](http://www.browsersync.io/)
 - etc, see [package.json](https://raw.githubusercontent.com/elijahzapien/react-flux-gulp-starter/master/package.json)
 
 ## Getting Started
