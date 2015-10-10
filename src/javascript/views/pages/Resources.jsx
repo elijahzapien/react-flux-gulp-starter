@@ -20,25 +20,23 @@ class Resources extends Component {
 
         let pageTitle = 'Resources - React, Flux, Gulp Started';
 
-        console.log(this.props);
+        let resources = this.props.resources;
+        let OUTPUT = [];
 
-        //let resources = this.props.resources;
-        //let OUTPUT = [];
-
-        /*resources.map(function(resource){*/
-            //OUTPUT.push(
-                //<p>
-                    //{`name: ${resource.title}. `}
-                    //{'link: '}<a href={resource.path}>{resource.path}</a>
-                //</p>
-            //);
-        /*});*/
+        resources.map(function(resource){
+            OUTPUT.push(
+                <p key={resource.id}>
+                    {`name: ${resource.title}. `}
+                    {'link: '}<a href={resource.path}>{resource.path}</a>
+                </p>
+            );
+        });
 
         return (
             <div>
                 <Helmet title={pageTitle} />
                 <h1>{'Resources'}</h1>
-                <p>{/*OUTPUT*/}</p>
+                {OUTPUT}
             </div>
         );
 

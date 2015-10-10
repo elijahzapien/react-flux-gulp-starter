@@ -26,11 +26,9 @@ class Application extends Component {
 
     componentWillMount() {
         LoadDataActions.loadData();
-        this.onResize();
     }
 
     componentDidMount() {
-        this.onResize();
         this.debouncedResize = _.debounce(this.onResize, 100);
         window.addEventListener('resize', this.debouncedResize.bind(this));
     }
@@ -45,7 +43,7 @@ class Application extends Component {
 
     render() {
 
-        let renderedChildren = React.Children.map(this.props.children, (child) => {
+        let children = React.Children.map(this.props.children, (child) => {
             return React.cloneElement(
                 child, {
                     breakpoint: this.props.breakpoint
@@ -59,8 +57,7 @@ class Application extends Component {
                     <Navigation />
                 </nav>
                 <main>
-                    {renderedChildren}
-                    {/*this.props.children*/}
+                    {children}
                 </main>
                 <footer>
                     <Timestamp />
