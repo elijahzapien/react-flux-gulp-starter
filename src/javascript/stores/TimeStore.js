@@ -15,7 +15,6 @@ class TimeStore {
 
     onTimeUpdate(payload) {
         this.time = new Date();
-        this.emitChange();
     }
 
 }

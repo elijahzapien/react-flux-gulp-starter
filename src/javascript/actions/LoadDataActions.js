@@ -1,33 +1,48 @@
 'use strict';
 
-import ResourcesStore from '../stores/ResourcesStore';
+import alt from '../alt';
+import ResourcesService from '../services/resources';
 
-function fetchData (context, store, service, action, done) {
-    if (store.getAll().length === 0) {
-        context.service.read(service, {}, {}, (err, data) => {
-            context.dispatch(action, data);
-            done();
-        });
-    } else {
+function fetchData (service, successAction, failAction, done) {
+
+    service.fetch()
+    .then((data) => {
+        successAction(data);
         done();
-    }
+    })
+    .catch((err) => {
+        if (failAction) failAction(err);
+        done();
+    });
+
 }
 
-export default function loadData (context, payload, done) {
+class LoadDataActions {
 
-    context.dispatch('LOAD_DATA_START');
+    constructor() {
+        this.generateActions(
+            'loadDataStart',
+            'loadDataEnd',
+            'receiveResources'
+        );
+    }
 
-    let resourcesStore = context.getStore(ResourcesStore);
+    loadData() {
 
-    let counter = 1;
+        this.actions.loadDataStart();
 
-    function onFetchData () {
-        if (--counter === 0) {
-            context.dispatch('LOAD_DATA_END');
-            done();
+        let counter = 1;
+
+        function onFetchData() {
+            if (--counter === 0) {
+                this.actions.loadDataEnd();
+            }
         }
+
+        fetchData(ResourcesService, this.actions.receiveResources, false, onFetchData.bind(this));
+
     }
 
-    fetchData(context, resourcesStore, 'resources', 'RECEIVE_RESOURCES', onFetchData);
-
 }
+
+export default alt.createActions(LoadDataActions);

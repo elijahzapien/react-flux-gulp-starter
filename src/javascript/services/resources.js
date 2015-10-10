@@ -1,29 +1,22 @@
 'use strict';
 
-import fs from 'fs';
-
 export default {
+    fetch: function() {
+        return new Promise(function(resolve, reject) {
 
-    name: 'resources',
+            let req = new XMLHttpRequest();
+            req.open('GET', '/libs/resources.json');
 
-    read: function(req, resource, params, config, callback) {
-        fs.readFile(__dirname + '/../../libs/resources.json', { encoding: 'utf8' }, function (err, data) {
-            if (err) {
-                callback(err, null);
-                return;
-            }
-            try {
-                callback(null, JSON.parse(data));
-            }
-            catch (err) {
-                callback(err, null);
-            }
+            req.onload = function() {
+                if (req.status === 200) {
+                    resolve(JSON.parse(req.response));
+                } else {
+                    reject(Error(req.statusText));
+                }
+            };
+
+            req.send();
+
         });
     }
-
-    // other methods
-    // create: function(req, resource, params, body, config, callback) {}
-    // update: function(req, resource, params, body, config, callback) {}
-    // delete: function(req, resource, params, config, callback) {}
-
 };

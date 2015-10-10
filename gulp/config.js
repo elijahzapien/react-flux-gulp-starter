@@ -20,6 +20,10 @@ module.exports = {
         src: src + "/assets/images/**",
         dest: dest + "/assets/images"
     },
+    libs: {
+        src: src + "/libs/**",
+        dest: dest + "/libs"
+    },
     assets: {
         src: src + "/assets/**",
         dest: dest + "/assets",

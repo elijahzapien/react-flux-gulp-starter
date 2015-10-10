@@ -1,4 +1,4 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['images', 'assets', 'minify-html', 'sass', 'lint', 'browserify', 'watch', 'server']);
+gulp.task('default', ['images', 'libs', 'assets', 'minify-html', 'sass', 'lint', 'browserify', 'watch', 'server']);
 

@@ -1,15 +1,26 @@
 'use strict';
 
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
+import connectToStores from 'alt/utils/connectToStores';
 import Helmet from 'react-helmet';
 
-//import ResourcesStore from '../../stores/ResourcesStore';
+import ResourcesStore from '../../stores/ResourcesStore';
 
-export default class Resources extends Component {
+class Resources extends Component {
+
+    static getStores() {
+        return [ResourcesStore];
+    }
+
+    static getPropsFromStores() {
+        return ResourcesStore.getState();
+    }
 
     render() {
 
         let pageTitle = 'Resources - React, Flux, Gulp Started';
+
+        console.log(this.props);
 
         //let resources = this.props.resources;
         //let OUTPUT = [];
@@ -34,3 +45,11 @@ export default class Resources extends Component {
     }
 
 }
+
+Resources.propTypes = {
+    resources: PropTypes.array.isRequired
+};
+
+Resources = connectToStores(Resources);
+
+export default Resources;

@@ -1,38 +1,23 @@
 'use strict';
 
-import BaseStore from 'fluxible/addons/BaseStore';
+import alt from '../alt';
+import LoadDataActions from '../actions/LoadDataActions';
 
-class ResourcesStore extends BaseStore {
+class ResourcesStore {
 
-    constructor(dispatcher) {
-        super(dispatcher);
+    constructor() {
         this.resources = [];
+
+        this.bindListeners({
+            onReceiveResources: LoadDataActions.RECEIVE_RESOURCES
+        });
     }
 
-    onReceiveResources(resources) {
-        this.resources = resources || [];
-        this.emitChange();
-    }
-
-    getAll() {
-        return this.resources;
-    }
-
-    dehydrate() {
-        return {
-            resources: this.resources
-        };
-    }
-
-    rehydrate(state) {
-        this.resources = state.resources;
+    onReceiveResources(data) {
+        this.resources = data;
     }
 
 }
 
-ResourcesStore.storeName = 'ResourcesStore';
-ResourcesStore.handlers = {
-    'RECEIVE_RESOURCES': 'onReceiveResources'
-};
+export default alt.createStore(ResourcesStore, 'ResourcesStore');
 
-export default ResourcesStore;
