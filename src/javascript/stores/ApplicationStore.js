@@ -2,6 +2,7 @@
 
 import alt from '../alt';
 import importMedia from '../utils/importMedia';
+import LoadDataActions from '../actions/LoadDataActions';
 import BreakpointActions from '../actions/BreakpointActions';
 
 class ApplicationStore {
@@ -18,9 +19,19 @@ class ApplicationStore {
         };
 
         this.bindListeners({
+            onLoadDataStart: LoadDataActions.LOAD_DATA_START,
+            onLoadDataEnd: LoadDataActions.LOAD_DATA_END,
             onBreakpointUpdate: BreakpointActions.UPDATE_BREAKPOINT
         });
 
+    }
+
+    onLoadDataStart() {
+        // do something on load data start
+    }
+
+    onLoadDataEnd() {
+        // do something on load data end
     }
 
     onBreakpointUpdate() {
@@ -48,14 +59,6 @@ class ApplicationStore {
             return false;
         }
 
-    }
-
-    onLoadDataStart() {
-        // do something on load data start
-    }
-
-    onLoadDataEnd() {
-        // do something on load data end
     }
 
 }

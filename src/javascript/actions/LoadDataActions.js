@@ -3,6 +3,10 @@
 import alt from '../alt';
 import ResourcesService from '../services/resources';
 
+/*
+ * Best used only for initial load (static data)
+ */
+
 function fetchData (service, successAction, failAction, done) {
 
     service.fetch()
@@ -28,6 +32,10 @@ class LoadDataActions {
     }
 
     loadData() {
+
+        // fix issue with action method needing to dispatch (booty)
+        // hopefully fixed in new version
+        this.dispatch();
 
         this.actions.loadDataStart();
 

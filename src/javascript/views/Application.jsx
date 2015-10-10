@@ -3,11 +3,12 @@
 import _ from 'lodash';
 
 import React, { Component, PropTypes } from 'react';
+
 import connectToStores from 'alt/utils/connectToStores';
 
 import ApplicationStore from '../stores/ApplicationStore';
-import BreakpointActions from '../actions/BreakpointActions';
 import LoadDataActions from '../actions/LoadDataActions';
+import BreakpointActions from '../actions/BreakpointActions';
 
 import Navigation from './components/Navigation';
 import Timestamp from './components/Timestamp';
