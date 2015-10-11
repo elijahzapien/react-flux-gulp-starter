@@ -35,7 +35,7 @@ class Resources extends Component {
         return (
             <div>
                 <Helmet title={pageTitle} />
-                <h1>{'References'}</h1>
+                <h1>{'Resources'}</h1>
                 {OUTPUT}
             </div>
         );
