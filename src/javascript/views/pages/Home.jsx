@@ -1,9 +1,9 @@
 'use strict';
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 
-export default class Home extends React.Component{
+export default class Home extends Component{
 
     render () {
 
@@ -20,3 +20,7 @@ export default class Home extends React.Component{
     }
 
 }
+
+Home.contextTypes = {
+    breakpoint: PropTypes.object.isRequired
+};

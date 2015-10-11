@@ -4,6 +4,10 @@
     margin: 0;
     @include rem(padding, 1);
     @include rem(font-size, 1.4);
+
+    p {
+        margin: 0;
+    }
 }
 
 // Media Queries

@@ -24,6 +24,12 @@ class Application extends Component {
         return ApplicationStore.getState();
     }
 
+    getChildContext() {
+        return {
+            breakpoint: this.props.breakpoint
+        };
+    }
+
     componentWillMount() {
         LoadDataActions.loadData();
     }
@@ -42,26 +48,17 @@ class Application extends Component {
     }
 
     render() {
-
-        let children = React.Children.map(this.props.children, (child) => {
-            return React.cloneElement(
-                child, {
-                    breakpoint: this.props.breakpoint
-                }
-            );
-        });
-
         return (
             <div>
                 <nav>
                     <Navigation />
                 </nav>
                 <main>
-                    {children}
+                    {this.props.children}
                 </main>
                 <footer>
                     <Timestamp />
-                    <BreakpointTracker breakpoint={this.props.breakpoint}/>
+                    <BreakpointTracker />
                 </footer>
             </div>
         );
@@ -70,6 +67,10 @@ class Application extends Component {
 }
 
 Application.propTypes = {
+    breakpoint: PropTypes.object.isRequired
+};
+
+Application.childContextTypes = {
     breakpoint: PropTypes.object.isRequired
 };
 
