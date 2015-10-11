@@ -51,7 +51,7 @@ class Application extends Component {
         return (
             <div>
                 <nav>
-                    <Navigation />
+                    <Navigation history={this.props.history}/>
                 </nav>
                 <main>
                     {this.props.children}
