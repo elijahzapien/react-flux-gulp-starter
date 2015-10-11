@@ -4,6 +4,7 @@
     margin: 0;
     @include rem(padding, 1);
     @include rem(font-size, 1.4);
+    background-color: #FFD740;
 
     p {
         margin: 0;
@@ -14,25 +15,25 @@
 // --------------
 @include media (">=small") {
     .breakpoint-tracker {
-        background-color: #0099FF;
+        background-color: #18FFFF;
     }
 }
 
 @include media (">=medium") {
     .breakpoint-tracker {
-        background-color: #CC66FF;
+        background-color: #E040FB;
     }
 }
 
 @include media (">=large") {
     .breakpoint-tracker {
-        background-color: #FF5050;
+        background-color: #B2FF59;
     }
 }
 
 @include media (">=xlarge") {
     .breakpoint-tracker {
-        background-color: #33CC33;
+        background-color: #FFFF00;
     }
 }
 
