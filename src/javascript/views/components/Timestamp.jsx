@@ -23,8 +23,9 @@ class TimeStamp extends Component {
     render() {
 
         return (
-            <div className="time-stamp">
-                <span>{`Time: ${this.props.time.toGMTString()}`}</span>
+            <div className="timestamp">
+                <p className="bold">{'Time:'}</p>
+                <p>{this.props.time.toGMTString()}</p>
                 <button onClick={this.onUpdateTime.bind(this)}>Update</button>
             </div>
         );

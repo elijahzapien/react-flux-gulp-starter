@@ -1,39 +1,39 @@
+//
+// Component: Breakpoint Tracker
+// ---------------------------
+
+$boxShadowDimensions: -1rem 0 0 0 !default;
+
 .breakpoint-tracker {
     display: block;
-    min-height: 30px;
-    margin: 0;
-    @include rem(padding, 1);
-    @include rem(font-size, 1.4);
-    background-color: #FFD740;
-
-    p {
-        margin: 0;
-    }
+    @include rem(margin, 0, 0, 0, -9);
+    @include rem(padding-left, 9);
+    box-shadow: $boxShadowDimensions #FFD740;
 }
 
 // Media Queries
 // --------------
 @include media (">=small") {
     .breakpoint-tracker {
-        background-color: #18FFFF;
+        box-shadow: $boxShadowDimensions #18FFFF;
     }
 }
 
 @include media (">=medium") {
     .breakpoint-tracker {
-        background-color: #E040FB;
+        box-shadow: $boxShadowDimensions #E040FB;
     }
 }
 
 @include media (">=large") {
     .breakpoint-tracker {
-        background-color: #B2FF59;
+        box-shadow: $boxShadowDimensions #B2FF59;
     }
 }
 
 @include media (">=xlarge") {
     .breakpoint-tracker {
-        background-color: #FFFF00;
+        box-shadow: $boxShadowDimensions #FFFF00;
     }
 }
 

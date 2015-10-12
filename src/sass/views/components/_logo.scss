@@ -1,0 +1,13 @@
+//
+// Component: Logo
+// ---------------------------
+
+.logo {
+    display: block;
+    background-image: url('#{$baseUrl}/images/logo.png');
+    background-size: contain;
+    @include rem(width, 5);
+    @include rem(height, 5);
+    @include rem(margin-bottom, 3);
+}
+

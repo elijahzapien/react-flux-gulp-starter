@@ -4,6 +4,7 @@ import alt from '../alt';
 import importMedia from '../utils/importMedia';
 import LoadDataActions from '../actions/LoadDataActions';
 import BreakpointActions from '../actions/BreakpointActions';
+import LogoActions from '../actions/LogoActions';
 
 class ApplicationStore {
 
@@ -18,10 +19,14 @@ class ApplicationStore {
             previousValue: null
         };
 
+        this.logoFocus = false;
+
         this.bindListeners({
             onLoadDataStart: LoadDataActions.LOAD_DATA_START,
             onLoadDataEnd: LoadDataActions.LOAD_DATA_END,
-            onBreakpointUpdate: BreakpointActions.UPDATE_BREAKPOINT
+            onBreakpointUpdate: BreakpointActions.UPDATE_BREAKPOINT,
+            onLogoMouseOver: LogoActions.LOGO_MOUSE_OVER,
+            onLogoMouseOut: LogoActions.LOGO_MOUSE_OUT
         });
 
     }
@@ -59,6 +64,14 @@ class ApplicationStore {
             return false;
         }
 
+    }
+
+    onLogoMouseOver() {
+        this.logoFocus = true;
+    }
+
+    onLogoMouseOut() {
+        this.logoFocus = false;
     }
 
 }

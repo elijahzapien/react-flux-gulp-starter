@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 
 export default class NotFound extends React.Component{
 
-    render () {
+    render() {
 
         let pageTitle = '404 Page Not Found - React, Flux, Gulp Started';
 

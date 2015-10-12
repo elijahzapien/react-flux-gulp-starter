@@ -11,6 +11,7 @@ import LoadDataActions from '../actions/LoadDataActions';
 import BreakpointActions from '../actions/BreakpointActions';
 
 import Navigation from './components/Navigation';
+import Logo from './components/Logo';
 import Timestamp from './components/Timestamp';
 import BreakpointTracker from './components/BreakpointTracker';
 
@@ -49,17 +50,20 @@ class Application extends Component {
 
     render() {
         return (
-            <div>
-                <nav>
-                    <Navigation history={this.props.history}/>
-                </nav>
+            <div className={this.props.logoFocus ? 'rage' : null}>
+                <aside>
+                    <nav>
+                        <Navigation history={this.props.history}/>
+                    </nav>
+                    <section>
+                        <Logo />
+                        <Timestamp />
+                        <BreakpointTracker />
+                    </section>
+                </aside>
                 <main>
                     {this.props.children}
                 </main>
-                <footer>
-                    <Timestamp />
-                    <BreakpointTracker />
-                </footer>
             </div>
         );
     }
@@ -67,7 +71,8 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-    breakpoint: PropTypes.object.isRequired
+    breakpoint: PropTypes.object.isRequired,
+    logoFocus: PropTypes.bool.isRequired
 };
 
 Application.childContextTypes = {

@@ -9,8 +9,16 @@ export default class BreakpointTracker extends Component {
 
         return (
             <div className="breakpoint-tracker">
-                <p>{ `Current Breakpoint: ${breakpoint.currentName} (${breakpoint.currentValue})` }</p>
-                <p>{ `Previous Breakpoint: ${breakpoint.previousName} (${breakpoint.previousValue})` }</p>
+                <p className="bold">{'Breakpoint:'}</p>
+                <p>
+                    {'Current:'}
+                    <br />
+                    {`${breakpoint.currentName} (${breakpoint.currentValue})`}
+                </p>
+                <p>
+                    {'Previous:'}
+                    <br />
+                    {`${breakpoint.previousName} (${breakpoint.previousValue})`}</p>
             </div>
         );
 

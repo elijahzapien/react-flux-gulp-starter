@@ -10,3 +10,30 @@
         opacity: 1;
     }
 }
+
+// rage
+// ==========
+
+@include keyframes(rage) {
+    0% {
+        background-color: $white;
+        background-image: url('#{$baseUrl}/images/logo.png');
+        color: $black;
+        transform: rotate(0) scale(1);
+    }
+    100% {
+        background-color: $black;
+        background-image: none;
+        color: $white;
+        transform: rotate(-360deg) scale(4);
+    }
+}
+
+@include keyframes(rageTranslate) {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

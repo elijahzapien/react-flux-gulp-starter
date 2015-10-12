@@ -1,5 +1,10 @@
+//
+// Component: Navigation
+// ---------------------------
+
 .navigation {
-    padding: 0;
+    @include rem(margin, 0);
+    @include rem(padding, 0);
 
     li {
         display: block;

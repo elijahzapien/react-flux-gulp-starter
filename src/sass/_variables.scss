@@ -9,7 +9,7 @@ $baseUrl:                   "/assets" !default;
 // Colors
 // -------------------------
 $white:                     #fff !default;
-$black:                     #444 !default;
+$black:                     #000 !default;
 
 // Scaffolding
 // -------------------------
@@ -24,8 +24,9 @@ $linkColorHover:            darken($linkColor, 20%) !default;
 
 // Typography
 // -------------------------
-$sans:                      sans-serif !default;
-$serif:                     serif !default;
+$sans:                      Helvetica, Arial, sans-serif !default;
+$serif:                     Georgia, serif !default;
+$monospace:                 "Courier New", Courier, monospace !default;
 
 $thin:                      100 !default;
 $light:                     300 !default;
@@ -34,8 +35,8 @@ $medium:                    500 !default;
 $bold:                      600 !default;
 $ultraBold:                 800 !default;
 
-$baseFontSize:              1.6 !default;
-$baseFontFamily:            $sans !default;
+$baseFontSize:              1.5 !default;
+$baseFontFamily:            $monospace !default;
 $baseLineHeight:            22px !default;
 
 $headingsFontWeight:        $bold !default;

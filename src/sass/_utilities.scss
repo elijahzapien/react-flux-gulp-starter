@@ -22,3 +22,6 @@
 
 // No pointer events
 .no-pointer-events { pointer-events: none; }
+
+// Text
+.bold { font-weight: $bold }
