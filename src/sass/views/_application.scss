@@ -5,7 +5,7 @@
         height: 100%;
 
         &.rage {
-           animation: rage 0.3s linear infinite alternate;
+           animation: rage 0.3s linear infinite;
 
            > aside, > main {
                animation: rageTranslate 0.3s linear infinite;

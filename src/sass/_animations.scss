@@ -18,20 +18,25 @@
     0% {
         background-color: $white;
         background-image: url('#{$baseUrl}/images/logo.png');
-        color: $black;
-        transform: rotate(0) scale(1);
+        background-size: 200px auto;
+        color: $white;
+        transform: rotate(0) scale(3);
+    }
+    50% {
+        background-image: url('http://i.giphy.com/ZVik7pBtu9dNS.gif');
     }
     100% {
         background-color: $black;
-        background-image: none;
+        background-size: 200px auto;
+        background-image: url('#{$baseUrl}/images/logo.png');
         color: $white;
-        transform: rotate(-360deg) scale(4);
+        transform: rotate(-360deg) scale(3);
     }
 }
 
 @include keyframes(rageTranslate) {
     0% {
-        transform: rotate(0);
+        transform: rotate(0) scale(2);
     }
     100% {
         transform: rotate(360deg);
