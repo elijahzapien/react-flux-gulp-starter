@@ -13,7 +13,6 @@ export default class NotFound extends React.Component{
             <div>
                 <Helmet title={pageTitle} />
                 <h1>404 (Not Found)</h1>
-                <p>...</p>
             </div>
         );
 
