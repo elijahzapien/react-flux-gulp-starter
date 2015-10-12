@@ -26,8 +26,9 @@ class Resources extends Component {
         resources.map(function(resource){
             OUTPUT.push(
                 <p key={resource.id}>
-                    {`${resource.title} \n link: `}
-                    <a href={resource.path}>{resource.path}</a>
+                    {resource.title}
+                    <br />
+                    link <a href={resource.path}>{resource.path}</a>
                 </p>
             );
         });

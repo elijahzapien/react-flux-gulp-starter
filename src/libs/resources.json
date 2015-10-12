@@ -1,22 +1,22 @@
 [
     {
-        "id": "resource-one",
-        "title": "resource one",
-        "path": "http://www.google.com"
+        "id": "react",
+        "title": "React",
+        "path": "https://facebook.github.io/react/"
     },
     {
-        "id": "resource-two",
-        "title": "resource two",
-        "path": "http://www.yahoo.com"
+        "id": "react-router",
+        "title": "React Router",
+        "path": "https://github.com/rackt/react-router"
     },
     {
-        "id": "resource-three",
-        "title": "resource three",
-        "path": "http://www.facebook.com"
+        "id": "alt",
+        "title": "Alt",
+        "path": "http://alt.js.org/"
     },
     {
-        "id": "resource-four",
-        "title": "resource four",
-        "path": "http://www.yelp.com"
+        "id": "express",
+        "title": "Express",
+        "path": "http://expressjs.com/"
     }
 ]
