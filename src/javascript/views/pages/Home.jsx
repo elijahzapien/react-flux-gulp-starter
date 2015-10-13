@@ -18,7 +18,7 @@ export default class Home extends Component{
                     react-flux-gulp-starter!
                 </h1>
                 <p>
-                    A boilerplate for building <a href='https://facebook.github.io/react/' target='_blank'>React</a> / <a href='https://facebook.github.io/flux/' target='_blank'>Flux</a> apps using <a href='http://alt.js.org/' target='_blank'>Alt</a> and <a href='http://gulpjs.com/' target='_blank'>Gulp</a>. Along with some common tasks and scenarios.
+                    A boilerplate for building <a href='https://facebook.github.io/react/' target='_blank'>React</a>/<a href='https://facebook.github.io/flux/' target='_blank'>Flux</a> apps using <a href='http://alt.js.org/' target='_blank'>Alt</a> and <a href='http://gulpjs.com/' target='_blank'>Gulp</a>. Along with some common tasks and scenarios.
                 </p>
             </div>
         );
