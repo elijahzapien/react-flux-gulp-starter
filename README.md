@@ -18,7 +18,7 @@
 
 #### Demo
 
-[elijahzapien.github.io/react-flux-gulp-starter]('http://elijahzapien.github.io/react-flux-gulp-starter')
+[elijahzapien.github.io/react-flux-gulp-starter](http://elijahzapien.github.io/react-flux-gulp-starter)
 
 ## Getting Started
 
