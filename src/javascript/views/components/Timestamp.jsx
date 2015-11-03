@@ -41,3 +41,4 @@ TimeStamp.propTypes = {
 TimeStamp = connectToStores(TimeStamp);
 
 export default TimeStamp;
+

@@ -76,3 +76,4 @@ export default {
     isGreaterThan: isBreakpointActive,
     isLessThan: isBreakpointNotActive
 };
+

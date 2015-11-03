@@ -52,3 +52,4 @@ Resources.propTypes = {
 Resources = connectToStores(Resources);
 
 export default Resources;
+

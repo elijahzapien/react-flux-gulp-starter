@@ -2,7 +2,7 @@
 
 import React from 'react';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { Router, Route, IndexRoute} from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 
 import Application from './Application';
 

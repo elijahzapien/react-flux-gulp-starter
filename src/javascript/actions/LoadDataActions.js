@@ -4,7 +4,7 @@ import alt from '../alt';
 import ResourcesService from '../services/resources';
 
 /*
- * Best used only for initial load (static data)
+ * Load all initial data
  */
 
 function fetchData (service, successAction, failAction, done) {
@@ -33,12 +33,12 @@ class LoadDataActions {
 
     loadData() {
 
-        // fix issue with action method needing to dispatch (booty)
-        // hopefully fixed in new version
         this.dispatch();
 
         this.actions.loadDataStart();
 
+        // counter based on number of
+        // fetchData calls being made below
         let counter = 1;
 
         function onFetchData() {
@@ -47,6 +47,7 @@ class LoadDataActions {
             }
         }
 
+        // fetch all necessary data here
         fetchData(ResourcesService, this.actions.receiveResources, false, onFetchData.bind(this));
 
     }
@@ -54,3 +55,4 @@ class LoadDataActions {
 }
 
 export default alt.createActions(LoadDataActions);
+

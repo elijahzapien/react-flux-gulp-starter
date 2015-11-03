@@ -59,8 +59,7 @@ class ApplicationStore {
             };
 
         } else {
-            // needed or else component will rerender on every event dispatch (booty)
-            // hopefully will be fixed in next version
+            // needed or else component will rerender on every event dispatch
             return false;
         }
 

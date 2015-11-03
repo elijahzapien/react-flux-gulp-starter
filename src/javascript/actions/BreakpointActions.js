@@ -9,3 +9,4 @@ class BreakpointActions {
 }
 
 export default alt.createActions(BreakpointActions);
+
