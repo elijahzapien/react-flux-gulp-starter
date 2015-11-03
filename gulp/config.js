@@ -62,7 +62,7 @@ module.exports = {
         settings: {
             insertGlobals: true,
             extensions: ['.js','.jsx'],
-            transform: [require('babelify'), require('reactify')]
+            transform: [require('babelify').configure({ presets: ['es2015','react'] })]
         }
     },
     production: {
