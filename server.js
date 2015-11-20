@@ -18,7 +18,7 @@ server.get('*', function (request, response){
   response.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3010;
 server.listen(port);
 
 debug('Listening on port ' + port);

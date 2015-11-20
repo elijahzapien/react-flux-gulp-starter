@@ -6,7 +6,9 @@ import LoadDataActions from '../actions/LoadDataActions';
 class ResourcesStore {
 
     constructor() {
-        this.resources = [];
+        this.state = {
+            resources: []
+        };
 
         this.bindListeners({
             onReceiveResources: LoadDataActions.RECEIVE_RESOURCES
@@ -14,7 +16,9 @@ class ResourcesStore {
     }
 
     onReceiveResources(data) {
-        this.resources = data;
+        this.setState({
+            resources: data
+        });
     }
 
 }

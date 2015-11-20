@@ -6,7 +6,9 @@ import TimeActions from '../actions/TimeActions';
 class TimeStore {
 
     constructor() {
-        this.time = new Date();
+        this.state = {
+            time: new Date()
+        };
 
         this.bindListeners({
             onTimeUpdate: TimeActions.UPDATE_TIME
@@ -14,7 +16,9 @@ class TimeStore {
     }
 
     onTimeUpdate(payload) {
-        this.time = new Date();
+        this.setState({
+            time: new Date()
+        });
     }
 
 }

@@ -16,10 +16,6 @@
 - [browserify](http://browserify.org/)
 - etc, see [package.json](https://raw.githubusercontent.com/elijahzapien/react-flux-gulp-starter/master/package.json)
 
-#### Demo
-
-[elijahzapien.github.io/react-flux-gulp-starter](http://elijahzapien.github.io/react-flux-gulp-starter)
-
 ## Getting Started
 
 #### 1. Install gulp globally:

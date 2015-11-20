@@ -12,14 +12,15 @@ class ApplicationStore {
         let currentName = importMedia.getActive(),
             currentValue = importMedia.getValue(currentName);
 
-        this.breakpoint = {
-            currentName: currentName,
-            currentValue: currentValue,
-            previousName: null,
-            previousValue: null
+        this.state = {
+            breakpoint: {
+                currentName: currentName,
+                currentValue: currentValue,
+                previousName: null,
+                previousValue: null
+            },
+            logoFocus: false
         };
-
-        this.logoFocus = false;
 
         this.bindListeners({
             onLoadDataStart: LoadDataActions.LOAD_DATA_START,
@@ -42,21 +43,23 @@ class ApplicationStore {
     onBreakpointUpdate() {
 
         if (
-            (this.breakpoint.currentName === null) ||
-            (importMedia.getActive() !== this.breakpoint.currentName)
+            (this.state.breakpoint.currentName === null) ||
+            (importMedia.getActive() !== this.state.breakpoint.currentName)
         ){
 
             let currentName = importMedia.getActive(),
                 currentValue = importMedia.getValue(currentName),
-                previousName = this.breakpoint.currentName,
-                previousValue = this.breakpoint.currentValue;
+                previousName = this.state.breakpoint.currentName,
+                previousValue = this.state.breakpoint.currentValue;
 
-            this.breakpoint = {
-                currentName: currentName,
-                currentValue: currentValue,
-                previousName: previousName,
-                previousValue: previousValue
-            };
+            this.setState({
+                breakpoint: {
+                    currentName: currentName,
+                    currentValue: currentValue,
+                    previousName: previousName,
+                    previousValue: previousValue
+                }
+            });
 
         } else {
             // needed or else component will rerender on every event dispatch
@@ -66,11 +69,15 @@ class ApplicationStore {
     }
 
     onLogoMouseOver() {
-        this.logoFocus = true;
+        this.setState({
+            logoFocus: true
+        });
     }
 
     onLogoMouseOut() {
-        this.logoFocus = false;
+        this.setState({
+            logoFocus: false
+        });
     }
 
 }
