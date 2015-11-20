@@ -1,6 +1,6 @@
 var dest = "./build";
 var src = './src';
-var port = 3010;
+var port = 3000;
 
 module.exports = {
     nodemon: {
