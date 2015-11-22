@@ -42,29 +42,21 @@ class ApplicationStore {
 
     onBreakpointUpdate() {
 
-        if (
-            (this.state.breakpoint.currentName === null) ||
-            (importMedia.getActive() !== this.state.breakpoint.currentName)
-        ){
+        let updatedCurrentName = importMedia.getActive(),
+            updatedCurrentValue = importMedia.getValue(updatedCurrentName),
+            updatedPreviousName = this.state.breakpoint.currentName,
+            updatedPreviousValue = this.state.breakpoint.currentValue;
 
-            let currentName = importMedia.getActive(),
-                currentValue = importMedia.getValue(currentName),
-                previousName = this.state.breakpoint.currentName,
-                previousValue = this.state.breakpoint.currentValue;
+        if (updatedCurrentName === updatedPreviousName) return false;
 
-            this.setState({
-                breakpoint: {
-                    currentName: currentName,
-                    currentValue: currentValue,
-                    previousName: previousName,
-                    previousValue: previousValue
-                }
-            });
-
-        } else {
-            // needed or else component will rerender on every event dispatch
-            return false;
-        }
+        this.setState({
+            breakpoint: {
+                currentName: updatedCurrentName,
+                currentValue: updatedCurrentValue,
+                previousName: updatedPreviousName,
+                previousValue: updatedPreviousValue
+            }
+        });
 
     }
 
