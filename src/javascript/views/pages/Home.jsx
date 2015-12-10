@@ -27,7 +27,3 @@ export default class Home extends Component{
 
 }
 
-Home.contextTypes = {
-    breakpoint: PropTypes.object.isRequired
-};
-
