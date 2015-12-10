@@ -5,7 +5,7 @@ var port = 3000;
 module.exports = {
     nodemon: {
         script: './server.js',
-        ext: 'js,jsx',
+        ext: 'js',
         ignore: [
             'build/*',
             'node_modules/*'
