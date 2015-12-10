@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import React, { Component, PropTypes } from 'react';
 
-import connectToStores from 'alt/utils/connectToStores';
+import connectToStores from 'alt-utils/lib/connectToStores';
 
 import ApplicationStore from '../stores/ApplicationStore';
 import LoadDataActions from '../actions/LoadDataActions';

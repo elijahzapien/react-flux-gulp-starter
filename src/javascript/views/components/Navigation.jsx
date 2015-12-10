@@ -6,8 +6,7 @@ import { Link } from 'react-router';
 export default class Navigation extends Component {
 
     isActive(target) {
-        let isActive = this.props.history.isActive;
-        return isActive(target) ? 'selected' : '';
+        return this.props.history.isActive(target) ? 'selected' : '';
     }
 
     render() {

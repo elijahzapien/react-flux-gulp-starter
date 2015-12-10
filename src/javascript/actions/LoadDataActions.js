@@ -4,7 +4,7 @@ import alt from '../alt';
 import ResourcesService from '../services/resources';
 
 /*
- * Load all initial data
+ * Load all initial data here
  */
 
 function fetchData (service, successAction, failAction, done) {
@@ -33,22 +33,22 @@ class LoadDataActions {
 
     loadData() {
 
-        this.dispatch();
+        return () => {
+            this.loadDataStart();
 
-        this.actions.loadDataStart();
+            // counter based on number of
+            // fetchData calls being made below
+            let counter = 1;
 
-        // counter based on number of
-        // fetchData calls being made below
-        let counter = 1;
-
-        function onFetchData() {
-            if (--counter === 0) {
-                this.actions.loadDataEnd();
+            function onFetchData() {
+                if (--counter === 0) {
+                    this.loadDataEnd();
+                }
             }
-        }
 
-        // fetch all necessary data here
-        fetchData(ResourcesService, this.actions.receiveResources, false, onFetchData.bind(this));
+            // fetch all necessary data here
+            fetchData(ResourcesService, this.receiveResources, false, onFetchData.bind(this));
+        };
 
     }
 

@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import connectToStores from 'alt/utils/connectToStores';
+import connectToStores from 'alt-utils/lib/connectToStores';
 
 import TimeStore from '../../stores/TimeStore';
 import TimeActions from '../../actions/TimeActions';
