@@ -1,5 +1,3 @@
-'use strict';
-
 import _ from 'lodash';
 
 import React, { Component, PropTypes } from 'react';
@@ -71,15 +69,14 @@ class Application extends Component {
 }
 
 Application.propTypes = {
-    breakpoint: PropTypes.object.isRequired,
-    logoFocus: PropTypes.bool.isRequired
+    history: PropTypes.any,
+    children: PropTypes.any,
+    breakpoint: PropTypes.object,
+    logoFocus: PropTypes.bool
 };
 
 Application.childContextTypes = {
     breakpoint: PropTypes.object.isRequired
 };
 
-Application = connectToStores(Application);
-
-export default Application;
-
+export default connectToStores(Application);

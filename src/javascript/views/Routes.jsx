@@ -1,8 +1,5 @@
-'use strict';
-
 import React from 'react';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import Application from './Application';
 
@@ -12,7 +9,7 @@ import Resources from './pages/Resources';
 import NotFound from './pages/NotFound';
 
 export default (
-    <Router history={createBrowserHistory()}>
+    <Router history={browserHistory}>
         <Route path="/" component={Application}>
             <IndexRoute component={Home} />
             <Route path="/about" component={About} />
@@ -21,4 +18,3 @@ export default (
         </Route>
     </Router>
 );
-

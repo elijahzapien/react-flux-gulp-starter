@@ -6,6 +6,7 @@
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
+
 @mixin rem($property, $values...) {
   $max: length($values);
   $pxValues: '';

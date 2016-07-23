@@ -18,7 +18,7 @@
             text-decoration: underline;
         }
 
-        &.selected a {
+        a.focus {
             font-weight: bold;
         }
     }

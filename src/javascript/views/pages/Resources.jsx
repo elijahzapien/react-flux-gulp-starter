@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component, PropTypes } from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 import Helmet from 'react-helmet';
@@ -49,7 +47,4 @@ Resources.propTypes = {
     resources: PropTypes.array.isRequired
 };
 
-Resources = connectToStores(Resources);
-
-export default Resources;
-
+export default connectToStores(Resources);

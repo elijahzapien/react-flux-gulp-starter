@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component, PropTypes } from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
@@ -38,7 +36,4 @@ TimeStamp.propTypes = {
     time: PropTypes.object.isRequired
 };
 
-TimeStamp = connectToStores(TimeStamp);
-
-export default TimeStamp;
-
+export default connectToStores(TimeStamp);

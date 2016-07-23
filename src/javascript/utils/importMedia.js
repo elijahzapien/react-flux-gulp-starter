@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Inspired by
  * https://css-tricks.com/making-sass-talk-to-javascript-with-json/
@@ -76,4 +74,3 @@ export default {
     isGreaterThan: isBreakpointActive,
     isLessThan: isBreakpointNotActive
 };
-

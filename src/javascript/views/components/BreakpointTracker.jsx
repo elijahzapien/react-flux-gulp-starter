@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component, PropTypes } from 'react';
 
 export default class BreakpointTracker extends Component {
@@ -29,4 +27,3 @@ export default class BreakpointTracker extends Component {
 BreakpointTracker.contextTypes = {
     breakpoint: PropTypes.object.isRequired
 };
-
