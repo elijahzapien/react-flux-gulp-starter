@@ -14,12 +14,15 @@ class TimeStamp extends Component {
         return TimeStore.getState();
     }
 
+    static propTypes = {
+        time: PropTypes.object
+    }
+
     onUpdateTime(event) {
         TimeActions.updateTime();
     }
 
     render() {
-
         return (
             <div className="timestamp">
                 <p className="bold">{'Time:'}</p>
@@ -27,13 +30,8 @@ class TimeStamp extends Component {
                 <button onClick={this.onUpdateTime.bind(this)}>Update</button>
             </div>
         );
-
     }
 
 }
-
-TimeStamp.propTypes = {
-    time: PropTypes.object.isRequired
-};
 
 export default connectToStores(TimeStamp);

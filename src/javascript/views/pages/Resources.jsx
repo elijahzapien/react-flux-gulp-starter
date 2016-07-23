@@ -14,37 +14,30 @@ class Resources extends Component {
         return ResourcesStore.getState();
     }
 
+    static propTypes = {
+        resources: PropTypes.array
+    }
+
     render() {
-
-        let pageTitle = 'Resources - React, Flux, Gulp Started';
-
-        let resources = this.props.resources;
-        let OUTPUT = [];
-
-        resources.map(function(resource){
-            OUTPUT.push(
-                <p key={resource.id}>
-                    {resource.title}
-                    <br />
-                    link <a href={resource.path}>{resource.path}</a>
-                </p>
-            );
-        });
+        const pageTitle = 'Resources - React, Flux, Gulp Started';
 
         return (
             <div>
                 <Helmet title={pageTitle} />
                 <h1>{'Resources'}</h1>
-                {OUTPUT}
+                {
+                    this.props.resources.map(resource => {
+                        return (
+                            <p key={resource.id}>
+                                {resource.title} <br /> link <a href={resource.path}>{resource.path}</a>
+                            </p>
+                        );
+                    })
+                }
             </div>
         );
-
     }
 
 }
-
-Resources.propTypes = {
-    resources: PropTypes.array.isRequired
-};
 
 export default connectToStores(Resources);

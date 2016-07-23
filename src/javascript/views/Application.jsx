@@ -23,6 +23,17 @@ class Application extends Component {
         return ApplicationStore.getState();
     }
 
+    static propTypes = {
+        history: PropTypes.any,
+        children: PropTypes.any,
+        breakpoint: PropTypes.object,
+        logoFocus: PropTypes.bool
+    }
+
+    static childContextTypes = {
+        breakpoint: PropTypes.object.isRequired
+    }
+
     getChildContext() {
         return {
             breakpoint: this.props.breakpoint
@@ -67,16 +78,5 @@ class Application extends Component {
     }
 
 }
-
-Application.propTypes = {
-    history: PropTypes.any,
-    children: PropTypes.any,
-    breakpoint: PropTypes.object,
-    logoFocus: PropTypes.bool
-};
-
-Application.childContextTypes = {
-    breakpoint: PropTypes.object.isRequired
-};
 
 export default connectToStores(Application);

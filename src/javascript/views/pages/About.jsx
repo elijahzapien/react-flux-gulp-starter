@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-export default class About extends React.Component {
+export default class About extends Component {
 
     render() {
-
-        let pageTitle = 'About - React, Flux, Gulp Started';
+        const pageTitle = 'About - React, Flux, Gulp Started';
 
         return (
             <div>

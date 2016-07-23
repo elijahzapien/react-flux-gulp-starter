@@ -5,7 +5,7 @@ var port = 3000;
 module.exports = {
     nodemon: {
         script: './server.js',
-        ext: 'js',
+        ext: 'js, es6',
         ignore: [
             'build/*',
             'node_modules/*'
@@ -47,7 +47,6 @@ module.exports = {
             imagePath: '/assets/images' // Used by the image-url helper
         }
     },
-    // eslint
     lint: {
         src: [
             src + '/javascript/**/*.js',
@@ -62,7 +61,14 @@ module.exports = {
         settings: {
             insertGlobals: true,
             extensions: ['.js','.jsx'],
-            transform: [require('babelify').configure({ presets: ['es2015','react'] })]
+            transform: [
+                require('babelify').configure(
+                    {
+                        plugins: ['module-alias', 'transform-class-properties'],
+                        presets: ['es2015','react','stage-2']
+                    }
+                )
+            ]
         }
     },
     production: {

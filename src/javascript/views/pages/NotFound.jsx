@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-export default class NotFound extends React.Component{
+export default class NotFound extends Component {
 
     render() {
-
-        let pageTitle = '404 Page Not Found - React, Flux, Gulp Started';
+        const pageTitle = '404 Page Not Found - React, Flux, Gulp Started';
 
         return (
             <div>
@@ -13,7 +12,6 @@ export default class NotFound extends React.Component{
                 <h1>404 (Not Found)</h1>
             </div>
         );
-
     }
 
 }

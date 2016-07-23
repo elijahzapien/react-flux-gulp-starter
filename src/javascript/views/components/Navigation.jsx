@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 export default class Navigation extends Component {
+
+    static propTypes = {
+        history: PropTypes.object
+    }
+
     render() {
         return (
             <ul className="navigation">
@@ -12,8 +17,5 @@ export default class Navigation extends Component {
             </ul>
         );
     }
-}
 
-Navigation.propTypes = {
-    history: PropTypes.object.isRequired
-};
+}

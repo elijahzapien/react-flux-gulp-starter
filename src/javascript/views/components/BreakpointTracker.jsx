@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class BreakpointTracker extends Component {
-    render() {
 
-        let breakpoint = this.context.breakpoint;
+    static contextTypes = {
+        breakpoint: PropTypes.object
+    }
+
+    render() {
+        const breakpoint = this.context.breakpoint;
 
         return (
             <div className="breakpoint-tracker">
@@ -20,10 +24,6 @@ export default class BreakpointTracker extends Component {
                 </p>
             </div>
         );
-
     }
-}
 
-BreakpointTracker.contextTypes = {
-    breakpoint: PropTypes.object.isRequired
-};
+}
