@@ -11,7 +11,7 @@ expressState.extend(server);
 server.use(express.static(__dirname + '/build'));
 
 /*
- * reference
+ * Reference
  * https://github.com/rackt/react-router/blob/master/docs/guides/basics/Histories.md#configuring-your-server
  */
 server.get('*', function (request, response){
@@ -22,4 +22,3 @@ var port = process.env.PORT || 3000;
 server.listen(port);
 
 debug('Listening on port ' + port);
-

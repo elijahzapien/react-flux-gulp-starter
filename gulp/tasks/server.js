@@ -1,10 +1,11 @@
-var changed = require('gulp-changed'),
-    gulp = require('gulp'),
-    config = require('../config').nodemon,
-    nodemon = require('gulp-nodemon');
+var gulp = require('gulp');
+var nodemon = require('gulp-nodemon');
 
-gulp.task('server', ['watch'], function (cb) {
+var config = require('../config').nodemon;
+
+gulp.task('server', function (cb) {
     var started = false;
+
     return nodemon(config)
         .on('start', function () {
             if (!started) {

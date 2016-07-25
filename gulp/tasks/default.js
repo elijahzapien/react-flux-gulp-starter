@@ -1,4 +1,14 @@
 var gulp = require('gulp');
 
-gulp.task('default', ['images', 'libs', 'assets', 'minify-html', 'sass', 'lint', 'browserify', 'watch', 'server']);
-
+gulp.task('default',
+    [
+        'images',
+        'libs',
+        'assets',
+        'minify-html',
+        'sass',
+        'lint',
+        'es2015-commonjs',
+        'watch',
+        'server'
+    ]);

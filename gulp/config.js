@@ -55,21 +55,28 @@ module.exports = {
         configFile: '.eslintrc',
         format: ''
     },
+    babel: {
+        src: [
+            src + '/javascript/**/*.js',
+            src + '/javascript/**/*.jsx'
+        ],
+        dest: dest + '/js'
+    },
     browserify: {
-        src: src + '/javascript/app.js',
+        src: dest + '/js/app.js',
         dest: dest + '/js',
         settings: {
             insertGlobals: true,
-            extensions: ['.js','.jsx'],
-            transform: [
-                require('babelify').configure(
-                    {
-                        plugins: ['module-alias', 'transform-class-properties'],
-                        presets: ['es2015','react','stage-2']
-                    }
-                )
-            ]
+            extensions: ['.js']
         }
+    },
+    cleanJS: {
+        patterns: [
+            dest + '/js/**',
+            '!' + dest + '/js',
+            '!' + dest + '/js/app.js'
+        ],
+        settings: {}
     },
     production: {
         cssSrc: dest + '/css/*.css',
