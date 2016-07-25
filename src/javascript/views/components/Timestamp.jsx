@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
-import TimeStore from '../../stores/TimeStore';
-import TimeActions from '../../actions/TimeActions';
+import TimeStore from 'stores/TimeStore';
+import TimeActions from 'actions/TimeActions';
 
 class TimeStamp extends Component {
 

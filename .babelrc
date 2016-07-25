@@ -5,7 +5,17 @@
         "stage-2"
     ],
     plugins: [
-        'module-alias',
-        'transform-class-properties',
+        "transform-class-properties",
+        [
+            "module-alias", 
+            [
+              { "src": "./src/javascript/actions", "expose": "actions" },
+              { "src": "./src/javascript/services", "expose": "services" },
+              { "src": "./src/javascript/stores", "expose": "stores" },
+              { "src": "./src/javascript/utils", "expose": "utils" },
+              { "src": "./src/javascript/views/components", "expose": "components" },
+              { "src": "./src/javascript/views/pages", "expose": "pages" },
+            ]
+        ]
     ]
 }

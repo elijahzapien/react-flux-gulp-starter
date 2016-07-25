@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import LogoActions from '../../actions/LogoActions';
+
+import LogoActions from 'actions/LogoActions';
 
 export default class Logo extends Component {
 

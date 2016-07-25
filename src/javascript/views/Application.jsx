@@ -1,17 +1,16 @@
-import _ from 'lodash';
-
 import React, { Component, PropTypes } from 'react';
+import _ from 'lodash';
 
 import connectToStores from 'alt-utils/lib/connectToStores';
 
-import ApplicationStore from '../stores/ApplicationStore';
-import LoadDataActions from '../actions/LoadDataActions';
-import BreakpointActions from '../actions/BreakpointActions';
+import ApplicationStore from 'stores/ApplicationStore';
+import LoadDataActions from 'actions/LoadDataActions';
+import BreakpointActions from 'actions/BreakpointActions';
 
-import Navigation from './components/Navigation';
-import Logo from './components/Logo';
-import Timestamp from './components/Timestamp';
-import BreakpointTracker from './components/BreakpointTracker';
+import Navigation from 'components/Navigation';
+import Logo from 'components/Logo';
+import Timestamp from 'components/Timestamp';
+import BreakpointTracker from 'components/BreakpointTracker';
 
 class Application extends Component {
 

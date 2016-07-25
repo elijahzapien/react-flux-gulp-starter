@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 import Helmet from 'react-helmet';
 
-import ResourcesStore from '../../stores/ResourcesStore';
+import ResourcesStore from 'stores/ResourcesStore';
 
 class Resources extends Component {
 
